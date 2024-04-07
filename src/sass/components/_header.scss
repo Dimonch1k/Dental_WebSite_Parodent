@@ -21,7 +21,6 @@ img {
 header.header {
     color: black;
     width: 100%;
-    height: 100px;
     text-transform: var(--upper);
 
     div.header__wrapper {
@@ -31,8 +30,6 @@ header.header {
 
         >div.toggle__wrapper {
             padding: 40px 37px;
-            border-right: 1px solid;
-
 
             >div.header__toggle {
                 display: grid;
@@ -53,7 +50,7 @@ header.header {
                     border: 1.5px solid black;
                     border-radius: 10px;
                     width: 25px;
-                    transition: all .2 ease-in-out !important;
+                    transition: all .2s ease-in-out;
                 }
 
                 >div.toggle__line:nth-child(2) {
@@ -68,12 +65,18 @@ header.header {
         }
 
         >div.header__logo {
-            display: grid;
-            justify-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             gap: 9px;
+
+            border-right: 1px solid #E5E5E5;
+            border-left: 1px solid #E5E5E5;
+
             margin-right: auto;
             padding: 0 20px;
-
+            height: 100%;
 
             >span.logo__network-of-dentists {
                 font-size: 12px;
@@ -87,7 +90,7 @@ header.header {
             margin-right: auto;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 20px;
 
             >ul {
                 display: flex;
@@ -108,8 +111,9 @@ header.header {
             >button.header__online-registration-btn {
                 background: var(--white);
                 border: 1px solid var(--black);
-                border-bottom: 2px solid red;
                 padding: 7px 11px;
+
+                position: relative;
 
                 font-size: 14px;
                 font-weight: 700;
@@ -123,33 +127,355 @@ header.header {
             }
         }
 
-        >div.header__select-address {
-            display: grid;
-            justify-items: center;
-            height: 20px;
-            overflow: hidden;
-
-
-            margin-right: 1%;
+        details.custom-select {
+            position: relative;
+            margin-right: 1rem;
+            width: 250px;
+            text-transform: none;
             font-size: 12px;
             font-weight: 400;
-            background: var(--white);
-            scroll-behavior: smooth;
 
-            &::before {
-                content: "\2965";
-                font-size: 50px;
+            &[open] {
+                z-index: 1;
+
+                >summary.radios {
+                    border-bottom: 1px solid var(--black);
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 100vw;
+                        height: 100vh;
+                        background: transparent;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    &::after {
+                        transform: rotate(135deg) translate(0%, -50%);
+                    }
+                }
             }
 
-            &:hover {
+            >summary.radios {
+                padding: 20px 0 20px 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                background-color: var(--white);
                 cursor: pointer;
+                list-style: none;
+
+                input::after {
+                    font-size: 12px;
+                }
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+
+                &::after {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    transform: rotate(-44.981deg) translate(50%, 0);
+
+                    border-bottom: 1px solid currentColor;
+                    border-left: 1px solid currentColor;
+                    transform-origin: center center;
+                    transition: transform ease-in-out 100ms
+                }
+
+                &:focus {
+                    outline: none;
+                }
             }
 
-            >span {
-                display: grid;
-                padding: 10px 20px !important;
+
+            ul.header__select-address {
+                width: 100%;
+                background: var(--white);
+                transition: background 0.3s ease-in-out;
+                position: absolute;
+                left: 0;
+                margin: 0;
+                box-sizing: border-box;
+                box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.05);
+                overflow-y: auto;
+
+
+                li {
+                    margin: 0;
+                    border-bottom: 1px solid var(--black);
+                    counter-reset: labels;
+                    min-height: 50px;
+                    display: grid;
+                    align-items: center;
+
+                    &:hover {
+                        background: rgb(210, 210, 210);
+                        transition: all 1s ease-in-out;
+                        border-bottom: 1px solid red;
+                    }
+
+                    &:nth-last-child(-n+3) {
+
+                        label {
+                            padding-top: 10px;
+                            padding-bottom: 20px;
+                        }
+                    }
+
+                    label {
+                        width: 100%;
+                        cursor: pointer;
+                        padding-left: 30px;
+                        padding-right: 30px;
+
+                        display: grid;
+                        gap: 5px;
+
+                        span.select-address__phone-number {
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+                    }
+                }
             }
         }
     }
 
+    summary.radios {
+        counter-reset: radios;
+
+        &::before {
+            content: var(--selection);
+        }
+
+        input[type=radio] {
+            counter-increment: radios;
+            appearance: none;
+            display: none;
+
+            &:checked {
+                display: inline;
+                --display: block
+            }
+
+            &::after {
+                content: attr(title);
+                display: inline;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+
+button.styled-btn {
+    letter-spacing: 1.12px;
+
+    div.styled-btn__bottom-line--red {
+        position: absolute;
+        bottom: -1px;
+        left: -1px;
+
+        width: 21%;
+        height: 4px;
+
+        background: red;
+    }
+}
+
+@media screen and (max-width: 1560px) {
+    header.header {
+        div.header__wrapper {
+            >div.toggle__wrapper {
+                padding: 30px 26px;
+            }
+
+
+            div.header__logo {
+
+                >img.logo__name {
+                    width: 140px !important;
+                }
+
+                >span.logo__network-of-dentists {
+                    font-size: 11px !important;
+                }
+            }
+
+            nav.header__navigation {
+                >ul {
+                    gap: 40px !important;
+
+                    >li a {
+                        font-size: 11px !important;
+                    }
+                }
+
+                button.header__online-registration-btn {
+                    font-size: 12px !important;
+                }
+            }
+
+            details.custom-select {
+                width: 220px !important;
+
+                >summary.radios input::after {
+                    font-size: 10px !important;
+                }
+
+                >ul.header__select-address li label {
+                    font-size: 10px !important;
+
+                    >span.select-address__phone-number {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    header.header {
+        div.header__wrapper {
+            >div.toggle__wrapper {
+                padding: 25px 20px;
+            }
+
+            div.header__logo {
+                >img.logo__name {
+                    width: 115px !important;
+                }
+
+                >span.logo__network-of-dentists {
+                    font-size: 10px !important;
+                    letter-spacing: .5px !important;
+                }
+            }
+
+            nav.header__navigation {
+                >ul {
+                    gap: 35px !important;
+
+                    >li a {
+                        font-size: 9px !important;
+                    }
+                }
+
+                button.header__online-registration-btn {
+                    font-size: 10px !important;
+                }
+            }
+
+            details.custom-select {
+                width: 200px !important;
+
+                >summary.radios input::after {
+                    font-size: 9px !important;
+                }
+
+                >ul.header__select-address li label {
+                    font-size: 9px !important;
+
+                    >span.select-address__phone-number {
+                        font-size: 12px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header.header {
+        div.header__wrapper {
+
+            >div.toggle__wrapper {
+                padding: 18px 19px;
+
+                >div.header__toggle {
+                    gap: 4px;
+
+                    &:hover {
+                        cursor: pointer;
+
+                        >div.toggle__line {
+                            width: 17px !important;
+                        }
+                    }
+
+                    >div.toggle__line {
+                        width: 17px;
+                        border: 1.2px solid black;
+                    }
+
+                    >div.toggle__line:nth-child(2) {
+                        width: 90%;
+
+                    }
+
+                    >div.toggle__line:nth-child(3) {
+                        width: 80%;
+                    }
+                }
+            }
+
+            div.header__logo {
+                >img.logo__name {
+                    width: 105px !important;
+                }
+
+                >span.logo__network-of-dentists {
+                    font-size: 9px !important;
+                    letter-spacing: .45px !important;
+                }
+            }
+
+            nav.header__navigation {
+                >ul {
+                    gap: 25px !important;
+
+                    >li a {
+                        font-size: 9px !important;
+                    }
+                }
+
+                button.header__online-registration-btn {
+                    font-size: 10px !important;
+                }
+            }
+
+            details.custom-select {
+                width: 160px !important;
+
+                >summary.radios {
+                    padding: 10px 0 10px 20px;
+
+                    input::after {
+                        font-size: 9px !important;
+                    }
+                }
+
+                >ul.header__select-address li {
+                    min-height: 40px !important;
+
+                    label {
+                        font-size: 9px !important;
+                        padding-right: 20px;
+                        padding-left: 20px;
+
+                        >span.select-address__phone-number {
+                            font-size: 11px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
