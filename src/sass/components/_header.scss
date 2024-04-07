@@ -79,6 +79,7 @@ header.header {
                 font-size: 12px;
                 font-weight: 500;
                 letter-spacing: 2px;
+                text-align: center;
             }
         }
 
@@ -122,21 +123,31 @@ header.header {
             }
         }
 
-        >select.header__select-address {
-            padding: 20px 33.445px 21px 15px;
-            background: var(--white);
-            border: none;
-            display: flex;
-            justify-content: center;
+        >div.header__select-address {
+            display: grid;
+            justify-items: center;
+            height: 20px;
+            overflow: hidden;
+
+
             margin-right: 1%;
+            font-size: 12px;
+            font-weight: 400;
+            background: var(--white);
+            scroll-behavior: smooth;
+
+            &::before {
+                content: "\2965";
+                font-size: 50px;
+            }
 
             &:hover {
                 cursor: pointer;
             }
 
-            >option {
-                display: flex;
-                justify-content: center;
+            >span {
+                display: grid;
+                padding: 10px 20px !important;
             }
         }
     }
