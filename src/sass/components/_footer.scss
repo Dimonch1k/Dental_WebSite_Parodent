@@ -1,6 +1,10 @@
 footer.footer {
     border: 1px solid lightblue;
     padding: 25px 100px 50px;
+
+    &__main-content {
+        background-color: #000;
+    }
 }
 
 div.styled-text--large {
