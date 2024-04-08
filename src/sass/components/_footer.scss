@@ -2,3 +2,15 @@ footer.footer {
     border: 1px solid lightblue;
     padding: 25px 100px 50px;
 }
+
+div.styled-text--large {
+    color: #000;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
