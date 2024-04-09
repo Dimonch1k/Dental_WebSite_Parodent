@@ -2,19 +2,77 @@ footer.footer {
     border: 1px solid lightblue;
     padding: 25px 100px 50px;
 
-    &__main-content {
-        background-color: #000;
+    >div.footer__main-content {
+        display: flex;
+
+        >div.footer__text {
+            margin-right: 10%;
+        }
+
+
+        >div.footer__links {
+            display: flex;
+            gap: 15%;
+            width: 75%;
+
+            >div.services {
+                display: flex;
+
+                ul.services__links {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            >:is(div.general, div.services) {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                >div.links-title {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+
+                >:is(ul.general__links, ul.services__links) {
+                    display: grid;
+                    gap: 20px;
+
+                    >li.footer-link {
+                        color: #000;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+
+                        &:hover {
+                            color: var(--primary-color);
+                            transition: color .4s ease-in-out;
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
+
+
 div.styled-text--large {
     color: #000;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
-    line-height: 56px;
-    letter-spacing: 1.2px;
+    line-height: 40px !important;
+    letter-spacing: 1.2px !important;
     text-transform: uppercase;
 
-    display: grid;
-    grid-template-rows: auto auto auto;
+    display: flex;
+    flex-direction: column;
+
+    >span.styled-text--red {
+        line-height: 40px;
+        color: var(--primary-color);
+    }
 }
