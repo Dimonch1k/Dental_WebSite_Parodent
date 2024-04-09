@@ -21,6 +21,7 @@ footer.footer {
                 ul.services__links {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
+                    gap: 10px !important;
                 }
             }
 
@@ -50,6 +51,7 @@ footer.footer {
                             transition: color .4s ease-in-out;
                             text-decoration: underline;
                             cursor: pointer;
+                            text-shadow: .6px .6px rgb(151, 35, 43);
                         }
                     }
                 }
