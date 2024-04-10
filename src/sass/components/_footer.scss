@@ -1,5 +1,5 @@
 footer.footer {
-    border: 1px solid lightblue;
+    border: 1px solid #c5c5c5;
     padding: 25px 100px 50px;
 
     >div.footer__main-content {
@@ -12,16 +12,17 @@ footer.footer {
 
         >div.footer__links {
             display: flex;
-            gap: 15%;
-            width: 75%;
+            width: 100%;
+            gap: 20%;
 
             >div.services {
                 display: flex;
+                width: 66%;
 
                 ul.services__links {
                     display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 10px !important;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 20% !important;
                 }
             }
 
@@ -31,27 +32,31 @@ footer.footer {
                 gap: 25px;
 
                 >div.links-title {
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: 700;
+                    text-transform: uppercase;
                 }
 
                 >:is(ul.general__links, ul.services__links) {
                     display: grid;
-                    gap: 20px;
+                    row-gap: 20px;
 
                     >li.footer-link {
-                        color: #000;
-                        font-size: 14px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: normal;
+                        width: max-content;
 
-                        &:hover {
-                            color: var(--primary-color);
-                            transition: color .4s ease-in-out;
-                            text-decoration: underline;
-                            cursor: pointer;
-                            text-shadow: .6px .6px rgb(151, 35, 43);
+                        a {
+                            color: #000;
+                            font-size: 14px;
+                            font-weight: 400;
+                            text-wrap: nowrap;
+
+                            &:hover {
+                                color: var(--primary-color);
+                                transition: color .4s ease-in-out;
+                                text-decoration: underline;
+                                cursor: pointer;
+                                text-shadow: .6px .6px rgb(151, 35, 43);
+                            }
                         }
                     }
                 }
@@ -78,3 +83,57 @@ div.styled-text--large {
         color: var(--primary-color);
     }
 }
+
+
+@media screen and (max-width: 1560px) {
+    footer.footer {
+        padding: 25px 90px 40px;
+
+        >div.footer__main-content {
+            >div.footer__text {
+                margin-right: 8%;
+            }
+
+            >div.footer__links {
+                display: flex;
+                width: 100%;
+                gap: 20%;
+
+                >div.services {
+                    display: flex;
+                    width: 66%;
+
+                    ul.services__links {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        column-gap: 20% !important;
+                    }
+                }
+
+                >:is(div.general, div.services) {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+
+                    >div.links-title {
+                        font-size: 13px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+
+                    >:is(ul.general__links, ul.services__links) {
+                        >li.footer-link {
+                            a {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {}
+
+@media screen and (max-width: 1200px) {}
