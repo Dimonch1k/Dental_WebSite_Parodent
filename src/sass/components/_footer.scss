@@ -1,61 +1,47 @@
 .footer {
-  border: 1px solid #c5c5c5;
 
-  > div.footer__main-content {
+  .footer__links {
     display: flex;
-    padding: 25px 100px 50px;
 
-    > div.footer__text {
-      margin-right: 10%;
+    .services {
+      display: flex;
+
+      ul.services__links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    > div.footer__links {
+    > :is(div.general, div.services) {
       display: flex;
-      width: 100%;
-      gap: 20%;
+      flex-direction: column;
+      gap: 25px;
 
-      > div.services {
-        display: flex;
-        width: 66%;
-
-        ul.services__links {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          column-gap: 20% !important;
-        }
+      >div.links-title {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
       }
 
-      > :is(div.general, div.services) {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
+      > :is(ul.general__links, ul.services__links) {
+        display: grid;
+        row-gap: 20px;
 
-        > div.links-title {
-          font-size: 14px;
-          font-weight: 700;
-          text-transform: uppercase;
-        }
+        >li {
+          width: max-content;
 
-        > :is(ul.general__links, ul.services__links) {
-          display: grid;
-          row-gap: 20px;
+          a {
+            color: #000;
+            font-size: 14px;
+            font-weight: 400;
+            text-wrap: nowrap;
 
-          > li {
-            width: max-content;
-
-            a {
-              color: #000;
-              font-size: 14px;
-              font-weight: 400;
-              text-wrap: nowrap;
-
-              &:hover {
-                color: var(--primary-color);
-                transition: color 0.4s ease-in-out;
-                text-decoration: underline;
-                cursor: pointer;
-                text-shadow: 0.6px 0.6px rgb(151, 35, 43);
-              }
+            &:hover {
+              color: var(--primary-color);
+              transition: color 0.4s ease-in-out;
+              text-decoration: underline;
+              cursor: pointer;
+              text-shadow: 0.6px 0.6px rgb(151, 35, 43);
             }
           }
         }
@@ -64,8 +50,7 @@
   }
 
   &__bottom-content {
-    border-top: 1px solid #c5c5c5;
-    padding: 45px 360px 45px 145px;
+    padding: 45px 0;
 
     display: flex;
     justify-content: space-between;
@@ -74,16 +59,16 @@
     font-weight: 400;
     line-height: 28px;
 
-    > div.footer__author-rule {
+    >div.footer__author-rule {
       font-size: 12px;
       letter-spacing: 0.6px;
     }
 
-    > .footer__social-links {
+    >.footer__social-links {
       display: flex;
       gap: 10px;
 
-      > div {
+      >div {
         width: 30px;
         height: 30px;
 
@@ -109,7 +94,7 @@
       }
     }
 
-    > div.footer__creator-text {
+    >div.footer__creator-text {
       font-size: 14px;
       color: rgba(82, 74, 74, 0.7);
     }
@@ -127,26 +112,27 @@ div.styled-text--large {
   display: flex;
   flex-direction: column;
 
-  > span.styled-text--red {
+  >span.styled-text--red {
     line-height: 40px;
     color: var(--primary-color);
+    width: max-content;
   }
 }
 
 @media screen and (max-width: 1560px) {
   footer.footer {
 
-    > div.footer__main-content {
-      > div.footer__text {
+    >div.footer__main-content {
+      >div.footer__text {
         margin-right: 8%;
       }
 
-      > div.footer__links {
+      >div.footer__links {
         display: flex;
         width: 100%;
         gap: 20%;
 
-        > div.services {
+        >div.services {
           display: flex;
           width: 66%;
 
@@ -162,14 +148,14 @@ div.styled-text--large {
           flex-direction: column;
           gap: 25px;
 
-          > div.links-title {
+          >div.links-title {
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
           }
 
           > :is(ul.general__links, ul.services__links) {
-            > li {
+            >li {
               a {
                 font-size: 13px;
               }
@@ -181,8 +167,6 @@ div.styled-text--large {
   }
 }
 
-@media screen and (max-width: 1400px) {
-}
+@media screen and (max-width: 1400px) {}
 
-@media screen and (max-width: 1200px) {
-}
+@media screen and (max-width: 1200px) {}
