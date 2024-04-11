@@ -3,16 +3,7 @@
   .footer__links {
     display: flex;
 
-    .services {
-      display: flex;
-
-      ul.services__links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    > :is(div.general, div.services) {
+    :is(div.general, div.services) {
       display: flex;
       flex-direction: column;
       gap: 25px;
@@ -23,26 +14,20 @@
         text-transform: uppercase;
       }
 
-      > :is(ul.general__links, ul.services__links) {
-        display: grid;
+      :is(ul.general__links, ul.services__links) {
         row-gap: 20px;
 
-        >li {
-          width: max-content;
+        >li a {
+          font-size: 14px;
+          font-weight: 400;
+          transition: all 0.5s ease-in-out;
+          line-height: 20px;
 
-          a {
-            color: #000;
-            font-size: 14px;
-            font-weight: 400;
-            text-wrap: nowrap;
-
-            &:hover {
-              color: var(--primary-color);
-              transition: color 0.4s ease-in-out;
-              text-decoration: underline;
-              cursor: pointer;
-              text-shadow: 0.6px 0.6px rgb(151, 35, 43);
-            }
+          &:hover {
+            text-shadow: .3px .4px 5px var(--primary-color);
+            color: var(--white);
+            transition: all 0.3s ease-in-out;
+            font-size: 16px;
           }
         }
       }
@@ -52,19 +37,21 @@
   &__bottom-content {
     padding: 45px 0;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
     font-weight: 400;
     line-height: 28px;
+
+    :is(.footer__author-rule, .footer__social-links, .footer__creator-text) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     >div.footer__author-rule {
       font-size: 12px;
       letter-spacing: 0.6px;
     }
 
-    >.footer__social-links {
+    >div.footer__social-links {
       display: flex;
       gap: 10px;
 
