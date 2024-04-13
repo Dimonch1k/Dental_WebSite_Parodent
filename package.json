@@ -29,6 +29,7 @@
     "not dead"
   ],
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "animate.css": "^4.1.1",
     "html-import-partials": "^1.0.1",
     "waypoints": "^4.0.1"

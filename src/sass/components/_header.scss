@@ -100,26 +100,15 @@ header.header {
           transition: color 0.4s ease-in-out;
 
           &:hover {
-            color: rgb(236, 93, 93);
+            color: var(--primary-color);
             transition: color 0.4s ease-in-out;
           }
         }
       }
 
       >button.header__online-registration-btn {
-        background: var(--white);
-        border: 1px solid var(--black);
-        padding: 7px 11px;
-
+        padding: 7px 11px !important;
         font-size: 14px;
-        font-weight: 700;
-        transition: all 0.5s ease-in-out;
-
-        &:hover {
-          background: linear-gradient(to bottom right, var(--white), black);
-          color: var(--white);
-          transition: all 0.3s ease-in-out;
-        }
       }
     }
 
@@ -220,6 +209,7 @@ header.header {
           &:hover {
             --p: 100%;
             background-position: right;
+            color: var(--white);
           }
 
           &:nth-last-child(-n + 3) {
@@ -277,18 +267,41 @@ header.header {
   }
 }
 
-button.styled-btn {
+.styled-btn {
   position: relative;
   letter-spacing: 1.12px;
+  background: var(--white);
+  border: 1px solid var(--black);
 
-  div.styled-btn__bottom-line--red {
+  width: max-content;
+  font-weight: 700;
+  padding: 15px 20px;
+
+  --c: no-repeat linear-gradient(#1095c1 0 0);
+  background:
+    var(--c) calc(-101% + var(--p, 0%)) 100% / 50.1% var(--p, .08em),
+    var(--c) calc(201% - var(--p, 0%)) 0 / 50.1% var(--p, .08em);
+  transition: .3s var(--t, 0s), background-position .3s calc(.3s - var(--t, 0s));
+
+  &:hover {
+    --p: 101%;
+    --t: 0.3s;
+    color: var(--white);
+
+    .styled-btn__bottom-line--red {
+      width: 101%;
+      transition: width .6s linear;
+    }
+  }
+
+  &__bottom-line--red {
     position: absolute;
     left: -1px;
     bottom: -1px;
 
+    transition: width .46s linear;
     width: 21%;
     height: 4px;
-
     background: var(--primary-color);
   }
 }

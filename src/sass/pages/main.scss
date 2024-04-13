@@ -1,6 +1,8 @@
-main.main {
+.main {
+  display: grid;
+  gap: 180px;
 
-  figure.zoom {
+  &__world-map {
     background-position: 50% 50%;
     background-size: 100% 100%;
 
@@ -8,7 +10,7 @@ main.main {
     overflow: hidden;
     cursor: zoom-in;
 
-    img {
+    &-img {
       transition: opacity .5s;
       width: 100%;
       display: block;
@@ -17,10 +19,129 @@ main.main {
         opacity: 0;
       }
     }
+
+    &__phone-us {
+      position: absolute;
+      bottom: 10%;
+      right: 5%;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          position: absolute;
+        }
+      }
+    }
   }
 
 
   &__our-medical-centres {
-    padding-top: 180px;
+    padding: 0 150px;
+    display: grid;
+    gap: 100px;
+
+
+
+
+
+
+
+
+    #slider {
+      width: 600px;
+      overflow: hidden;
+      position: relative;
+
+      ul {
+        width: max-content;
+        height: 100%;
+
+        li {
+          position: relative;
+          width: 600px;
+          height: auto;
+
+          img {
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .slides {
+      padding: 0 70px;
+      width: 100%;
+
+      display: flex;
+      gap: 20px;
+
+      li {
+        display: grid;
+        gap: 10px;
+
+        img {
+          border-radius: 10px;
+
+        }
+
+        .clinic-city-text--bold {
+          font-size: 17px;
+          font-weight: 700;
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+      }
+    }
   }
+
+
+  &__content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__description {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 28px;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+h1.styled-text--large {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 72.8px !important;
+  letter-spacing: 1.56px !important;
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+
+  >span.styled-text--red {
+    line-height: 72.8px !important;
+    letter-spacing: 1.56px !important;
+
+    color: var(--primary-color);
+    width: max-content;
+  }
+
 }

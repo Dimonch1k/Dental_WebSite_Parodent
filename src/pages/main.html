@@ -1,12 +1,99 @@
 <main class="main">
 
+  <!-- World map -->
   <figure class="main__world-map zoom" onmousemove="zoom(event)" style="background-image: url('../img/world-map.svg')">
-    <img src="../img/world-map.svg" />
+    <img src="../img/world-map.svg" class="main__world-map-img" />
+    <div class="main__world-map__phone-us">
+      <a href="#" class="position-absolute">
+        <img src="../img/background-call-btn.svg" alt="background radial gradient image" class="position-absolute">
+        <img src="../img/phone-icon.svg" alt="" class="main__world-map__phone_us-img">
+      </a>
+    </div>
   </figure>
 
-  <div class="main__our-medical-centres">
 
-  </div>
+  <!-- Our medical centres Section -->
+  <section class="main__our-medical-centres">
+    <div class="main__content">
+      <div id="slider" class="flexslider col-7">
+        <ul class="slides p-0">
+          <li>
+            <img src="../img/clinic1-img.svg" draggable="false">
+          </li>
+          <li>
+            <img src="../img/clinic2-img.svg" draggable="false">
+          </li>
+          <li>
+            <img src="../img/clinic3-img.svg" draggable="false">
+          </li>
+          <li>
+            <img src="../img/clinic4-img.svg" draggable="false">
+          </li>
+        </ul>
+      </div>
+
+      <div class="main__content__info col-4">
+        <h1 class="styled-text--large">Наші <span class="styled-text--red">медичні центри</span></h1>
+        <p class="main-content__description">
+          Більш ніж <span>70</span> лікарів-стоматологів дбають про здоров’я
+          Ваших зубів! <br>
+          Понад <span>70 000</span> пацієнтів довіряють нам! Ми вже більше <span>25</span>
+          років дбаємо про Ваші посмішки! Мережа стоматологій
+          «Пародент» надає всі види стоматологічного лікування.
+        </p>
+
+        <button class="styled-btn contact-us">
+          Зв'язатися з нами
+          <div class="styled-btn__bottom-line--red"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Medical clinics slider -->
+    <div id="carousel" class="main__our-medical-centres__clinic-slider flexslider">
+      <ul class="slides p-0">
+        <li>
+          <img src="../img/clinic1-img.svg" draggable="false">
+          <p class="clinic-city-text--bold">м.Львів</p>
+          <p class="clinic-street-text">вул. Шевченка, 87А</p>
+        </li>
+        <li>
+          <img src="../img/clinic2-img.svg" draggable="false">
+          <p class="clinic-city-text--bold">м.Львів</p>
+          <p class="clinic-street-text">вул. Личаківська 52</p>
+        </li>
+        <li>
+          <img src="../img/clinic3-img.svg" draggable="false">
+          <p class="clinic-city-text--bold">м.Львів</p>
+          <p class="clinic-street-text">вул. Глибока, 4</p>
+        </li>
+        <li>
+          <img src="../img/clinic4-img.svg" draggable="false">
+          <p class="clinic-city-text--bold">м.Львів</p>
+          <p class="clinic-street-text">вул. Скорика 29(Чайковського)</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="main__popular-services">
+    <div class="main__popular-services__content">
+      <h1 class="styled-text--large">Популярні <span class="styled-text--red">послуги</span>
+      </h1>
+      <p class="main-content__description">
+        Мережа стоматологій «Пародент» пропонує пацієнтам широкий
+        спектр стоматологічних послуг високого рівня і якості,
+        починаючи від різних способів діагностики і до складних
+        операцій при лікуванні хвороб порожнини рота.
+      </p>
+      <button class="styled-btn contact-us">
+        Переглянути всі послуги
+        <div class="styled-btn__bottom-line--red"></div>
+      </button>
+    </div>
+  </section>
 </main>
 
 <script src="../js/zoom-map.js"></script>
+<script src="../js/clinic-slider.ts"></script>
