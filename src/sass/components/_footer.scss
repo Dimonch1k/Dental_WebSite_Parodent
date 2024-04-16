@@ -1,4 +1,5 @@
 .footer {
+  width: 100vw;
 
   .footer__links {
     display: flex;
@@ -8,7 +9,7 @@
       flex-direction: column;
       gap: 25px;
 
-      >div.links-title {
+      > div.links-title {
         font-size: 14px;
         font-weight: 700;
         text-transform: uppercase;
@@ -17,7 +18,7 @@
       :is(ul.general__links, ul.services__links) {
         row-gap: 20px;
 
-        >li {
+        > li {
           padding-right: none !important;
 
           a {
@@ -27,7 +28,7 @@
             line-height: 20px;
 
             &:hover {
-              text-shadow: .3px .4px 5px var(--primary-color);
+              text-shadow: 0.3px 0.4px 5px var(--primary-color);
               color: var(--white);
               transition: all 0.3s ease-in-out;
               font-size: 16px;
@@ -50,16 +51,16 @@
       align-items: center;
     }
 
-    >div.footer__author-rule {
+    > div.footer__author-rule {
       font-size: 12px;
       letter-spacing: 0.6px;
     }
 
-    >div.footer__social-links {
+    > div.footer__social-links {
       display: flex;
       gap: 10px;
 
-      >div {
+      > div {
         width: 30px;
         height: 30px;
 
@@ -85,12 +86,11 @@
       }
     }
 
-    >div.footer__creator-text {
+    > div.footer__creator-text {
       font-size: 14px;
       color: rgba(82, 74, 74, 0.7);
     }
   }
-
 
   h1.footer__styled-text--large {
     font-size: 28px;
@@ -102,7 +102,7 @@
     display: flex;
     flex-direction: column;
 
-    >span.styled-text--red {
+    > span.styled-text--red {
       line-height: 40px;
       color: var(--primary-color);
       width: max-content;
@@ -112,18 +112,17 @@
 
 @media screen and (max-width: 1560px) {
   footer.footer {
-
-    >div.footer__main-content {
-      >div.footer__text {
+    > div.footer__main-content {
+      > div.footer__text {
         margin-right: 8%;
       }
 
-      >div.footer__links {
+      > div.footer__links {
         display: flex;
         width: 100%;
         gap: 20%;
 
-        >div.services {
+        > div.services {
           display: flex;
           width: 66%;
 
@@ -139,14 +138,14 @@
           flex-direction: column;
           gap: 25px;
 
-          >div.links-title {
+          > div.links-title {
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
           }
 
           > :is(ul.general__links, ul.services__links) {
-            >li {
+            > li {
               a {
                 font-size: 13px;
               }
@@ -158,6 +157,8 @@
   }
 }
 
-@media screen and (max-width: 1400px) {}
+@media screen and (max-width: 1400px) {
+}
 
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1200px) {
+}

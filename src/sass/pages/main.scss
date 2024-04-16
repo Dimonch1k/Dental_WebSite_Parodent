@@ -1,103 +1,84 @@
 .main {
   display: grid;
   gap: 180px;
+  width: 99vw;
 
-  &__world-map {
-    background-position: 50% 50%;
-    background-size: 100% 100%;
+  #map {
+    height: 70vh;
+    width: 100%;
+  }
 
-    position: relative;
-    overflow: hidden;
-    cursor: zoom-in;
+  div.phone-us {
+    position: absolute;
+    left: 1vw;
+    bottom: 1rem;
+    width: 70px;
+    height: 70px;
 
-    &-img {
-      transition: opacity .5s;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
-      display: block;
+      object-fit: cover;
 
-      &:hover {
-        opacity: 0;
-      }
-    }
+      img {
+        object-fit: cover;
+        
+        &:nth-child(1) {
+          width: 100%;
+        }
 
-    &__phone-us {
-      position: absolute;
-      bottom: 10%;
-      right: 5%;
-
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          position: absolute;
+        &:nth-child(2) {
+          width: 40%;
+          z-index: 10;
         }
       }
     }
   }
 
-
   &__our-medical-centres {
-    padding: 0 150px;
     display: grid;
-    gap: 100px;
+    gap: 40px;
+    width: 100%;
 
-
-
-
-
-
-
-
-    #slider {
-      width: 600px;
-      overflow: hidden;
+    .mySlides {
       position: relative;
-
-      ul {
-        width: max-content;
-        height: 100%;
-
-        li {
-          position: relative;
-          width: 600px;
-          height: auto;
-
-          img {
-            object-fit: cover;
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    .slides {
-      padding: 0 70px;
-      width: 100%;
-
-      display: flex;
-      gap: 20px;
-
-      li {
-        display: grid;
-        gap: 10px;
 
         img {
           border-radius: 10px;
-
         }
 
-        .clinic-city-text--bold {
-          font-size: 17px;
-          font-weight: 700;
-        }
-
-        p {
-          margin: 0;
-          padding: 0;
+        .clinic-info {
           text-align: center;
+          
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-shadow: .2px .2px 2px black;
+
+          .clinic-city-text--bold {
+            font-size: 17px;
+            font-weight: 700;
+          }
         }
+      
+    }
+
+    .slide {
+      cursor: pointer;
+      border-radius: 10px;
+  
+      img {
+        border-radius: 10px;
       }
     }
   }
@@ -105,12 +86,11 @@
 
   &__content {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
 
+
     &__info {
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 20px;
     }
 
@@ -118,6 +98,7 @@
       font-size: 17px;
       font-weight: 400;
       line-height: 28px;
+      text-wrap: wrap;
 
       span {
         font-weight: 700;
@@ -127,7 +108,7 @@
 }
 
 h1.styled-text--large {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 72.8px !important;
   letter-spacing: 1.56px !important;
@@ -136,12 +117,40 @@ h1.styled-text--large {
   display: flex;
   flex-direction: column;
 
-  >span.styled-text--red {
+  > span.styled-text--red {
     line-height: 72.8px !important;
     letter-spacing: 1.56px !important;
 
     color: var(--primary-color);
     width: max-content;
   }
+}
 
+
+
+
+@media screen and (min-width: 992px) {
+  h1.styled-text--large {
+    font-size: 2rem;
+    line-height: 3rem !important;
+
+    span.styled-text--red {
+      line-height: unset !important;
+
+
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1.styled-text--large {
+    font-size: 2rem;
+    line-height: 2.2rem !important;
+
+    span.styled-text--red {
+      line-height: unset !important;
+
+
+    }
+  }
 }
