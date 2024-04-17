@@ -6,15 +6,17 @@
 
     <div class="phone-us">
       <a href="#" class="position-absolute">
-        <img src="../img/background-call-btn.svg" alt="background radial gradient image" class="position-absolute">
-        <img src="../img/phone-icon.svg" alt="" class="main__world-map__phone_us-img">
+        <img src="../img/background-call-btn.svg"
+          alt="background radial gradient image" class="position-absolute">
+        <img src="../img/phone-icon.svg" alt
+          class="main__world-map__phone_us-img">
       </a>
     </div>
   </div>
 
   <!-- Our medical centres Section -->
   <section class="main__our-medical-centres container">
-    <div class="main__content flex-column-reverse flex-lg-row">
+    <div class="main__content flex-column-reverse flex-lg-row gap-3 gap-lg-0 ">
 
       <div class="slideshow-container col-xl-6 col-lg-5 col-md-8">
 
@@ -51,14 +53,17 @@
         </div>
       </div>
 
-      <div class="main__content__info align-items-lg-start align-items-center col-xl-4 col-lg-5 offset-lg-1">
-        <h1 class="styled-text--large text-lg-start text-center">Наші <span class="styled-text--red">медичні
+      <div
+        class="main__content__info col-xl-4 col-lg-5 offset-lg-1">
+        <h1 class="styled-text--larger">Наші <span
+            class="styled-text--red">медичні
             центри</span>
         </h1>
         <p class="main__content__description">
           Більш ніж <span>70</span> лікарів-стоматологів дбають про здоров’я
           Ваших зубів! <br>
-          Понад <span>70 000</span> пацієнтів довіряють нам! Ми вже більше <span>25</span>
+          Понад <span>70 000</span> пацієнтів довіряють нам! Ми вже більше
+          <span>25</span>
           років дбаємо про Ваші посмішки! Мережа стоматологій
           «Пародент» надає всі види стоматологічного лікування.
         </p>
@@ -70,43 +75,80 @@
       </div>
     </div>
 
-    <!-- Medical clinics slider -->
+    <!-- Medical clinics slides -->
     <div
-      class="slidess row row-cols-2 row-cols-sm-4 align-items-center justify-content-md-between row-gap-3 row-gap-sm-0">
+      class="slides row row-cols-2 row-cols-sm-4 align-items-center justify-content-md-between row-gap-3 row-gap-sm-0">
       <span class="slide col" onclick="currentSlide(1)">
-        <img class="w-100 " src="../img/clinic1-img.svg" alt="clinic 1" draggable="false">
+        <img class="w-100 " src="../img/clinic1-img.svg" alt="clinic 1"
+          draggable="false">
       </span>
       <span class="slide col" onclick="currentSlide(2)">
-        <img class="w-100" src="../img/clinic2-img.svg" alt="clinic 2" draggable="false">
+        <img class="w-100" src="../img/clinic2-img.svg" alt="clinic 2"
+          draggable="false">
       </span>
       <span class="slide col" onclick="currentSlide(3)">
-        <img class="w-100" src="../img/clinic3-img.svg" alt="clinic 3" draggable="false">
+        <img class="w-100" src="../img/clinic3-img.svg" alt="clinic 3"
+          draggable="false">
       </span>
       <span class="slide col" onclick="currentSlide(4)">
-        <img class="w-100" src="../img/clinic4-img.svg" alt="clinic 4" draggable="false">
+        <img class="w-100" src="../img/clinic4-img.svg" alt="clinic 4"
+          draggable="false">
       </span>
     </div>
   </section>
 
+  <section class="main__popular-services container">
+    <div class="main__content row row-cols-md-2 row-cols-1">
 
-  <section class="main__popular-services">
-    <div class="main__popular-services__content">
-      <h1 class="styled-text--large">Популярні <span class="styled-text--red">послуги</span>
-      </h1>
-      <p class="main-content__description">
-        Мережа стоматологій «Пародент» пропонує пацієнтам широкий
-        спектр стоматологічних послуг високого рівня і якості,
-        починаючи від різних способів діагностики і до складних
-        операцій при лікуванні хвороб порожнини рота.
-      </p>
-      <button class="styled-btn contact-us">
-        Переглянути всі послуги
-        <div class="styled-btn__bottom-line--red"></div>
-      </button>
+      <div class="main__content__info col-lg-4">
+        <h1 class="styled-text--large">Популярні <span
+            class="styled-text--red">послуги</span>
+        </h1>
+        <p class="main__content__description">
+          Мережа стоматологій «Пародент» пропонує пацієнтам широкий
+          спектр стоматологічних послуг високого рівня і якості,
+          починаючи від різних способів діагностики і до складних
+          операцій при лікуванні хвороб порожнини рота.
+        </p>
+        <button class="styled-btn contact-us">
+          Переглянути всі послуги
+          <div class="styled-btn__bottom-line--red"></div>
+        </button>
+      </div>
+
+      <div class="main__content__services-offers offers col-lg-7 offset-lg-1">
+        <div class="row row-cols-2 gap-4">
+          <div class="col-5 d-flex flex-column gap-4 mt-5">
+            <div class="offer">
+              <img class="w-100" src="../img/popular-services-1.svg"
+                alt="service image">
+              <div class="offer__link">Професійна гігієна ротової
+                порожнини</div>
+            </div>
+            <div class="offer">
+              <img class="w-100" src="../img/popular-services-3.svg"
+                alt="service image">
+              <div class="offer__link">Хірургічна стоматологія</div>
+            </div>
+          </div>
+          <div class="col-5 d-flex flex-column gap-4">
+            <div class="offer">
+              <img class="w-100" src="../img/popular-services-2.svg"
+                alt="service image">
+              <div class="offer__link">Імплантологія</div>
+            </div>
+            <div class="offer">
+              <img class="w-100" src="../img/popular-services-4.svg"
+                alt="service image">
+              <div class="offer__link">Відбілювання зубів</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 </main>
-
 
 <!-- <script src="../js/zoom-map.js"></script> -->
 <script src="../js/clinic-slider.js"></script>
