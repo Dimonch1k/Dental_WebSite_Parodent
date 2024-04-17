@@ -6,10 +6,8 @@
 
     <div class="phone-us">
       <a href="#" class="position-absolute">
-        <img src="../img/background-call-btn.svg"
-          alt="background radial gradient image" class="position-absolute">
-        <img src="../img/phone-icon.svg" alt
-          class="main__world-map__phone_us-img">
+        <img src="../img/background-call-btn.svg" alt="background radial gradient image" class="position-absolute">
+        <img src="../img/phone-icon.svg" alt class="main__world-map__phone_us-img">
       </a>
     </div>
   </div>
@@ -53,11 +51,8 @@
         </div>
       </div>
 
-      <div
-        class="main__content__info col-xl-4 col-lg-5 offset-lg-1">
-        <h1 class="styled-text--larger">Наші <span
-            class="styled-text--red">медичні
-            центри</span>
+      <div class="main__content__info col-xl-4 col-lg-5 offset-lg-1">
+        <h1 class="styled-text--large">Наші <span class="styled-text--red">медичні центри</span>
         </h1>
         <p class="main__content__description">
           Більш ніж <span>70</span> лікарів-стоматологів дбають про здоров’я
@@ -79,30 +74,25 @@
     <div
       class="slides row row-cols-2 row-cols-sm-4 align-items-center justify-content-md-between row-gap-3 row-gap-sm-0">
       <span class="slide col" onclick="currentSlide(1)">
-        <img class="w-100 " src="../img/clinic1-img.svg" alt="clinic 1"
-          draggable="false">
+        <img class="w-100 " src="../img/clinic1-img.svg" alt="clinic 1" draggable="false">
       </span>
       <span class="slide col" onclick="currentSlide(2)">
-        <img class="w-100" src="../img/clinic2-img.svg" alt="clinic 2"
-          draggable="false">
+        <img class="w-100" src="../img/clinic2-img.svg" alt="clinic 2" draggable="false">
       </span>
       <span class="slide col" onclick="currentSlide(3)">
-        <img class="w-100" src="../img/clinic3-img.svg" alt="clinic 3"
-          draggable="false">
+        <img class="w-100" src="../img/clinic3-img.svg" alt="clinic 3" draggable="false">
       </span>
       <span class="slide col" onclick="currentSlide(4)">
-        <img class="w-100" src="../img/clinic4-img.svg" alt="clinic 4"
-          draggable="false">
+        <img class="w-100" src="../img/clinic4-img.svg" alt="clinic 4" draggable="false">
       </span>
     </div>
   </section>
 
   <section class="main__popular-services container">
-    <div class="main__content row row-cols-md-2 row-cols-1">
+    <div class="main__content row row-cols-lg-2 row-cols-1 gap-lg-0 gap-4">
 
       <div class="main__content__info col-lg-4">
-        <h1 class="styled-text--large">Популярні <span
-            class="styled-text--red">послуги</span>
+        <h1 class="styled-text--large">Популярні <span class="styled-text--red">послуги</span>
         </h1>
         <p class="main__content__description">
           Мережа стоматологій «Пародент» пропонує пацієнтам широкий
@@ -116,32 +106,37 @@
         </button>
       </div>
 
-      <div class="main__content__services-offers offers col-lg-7 offset-lg-1">
-        <div class="row row-cols-2 gap-4">
+      <!-- Popular services offers -->
+      <div class="main__content__services-offers offers col-lg-7 offset-lg-1 gap">
+        <div class="row row-cols-2 justify-content-center">
           <div class="col-5 d-flex flex-column gap-4 mt-5">
-            <div class="offer">
-              <img class="w-100" src="../img/popular-services-1.svg"
-                alt="service image">
-              <div class="offer__link">Професійна гігієна ротової
-                порожнини</div>
+            <div class="offer position-relative">
+              <img class="w-100" src="../img/popular-services-1.svg" alt="service image">
+              <a href="#">
+                <div class="offer-link position-absolute bottom-0 end-0 translate-middle-y">Професійна гігієна
+                  ротової
+                  порожнини</div>
+              </a>
             </div>
-            <div class="offer">
-              <img class="w-100" src="../img/popular-services-3.svg"
-                alt="service image">
-              <div class="offer__link">Хірургічна стоматологія</div>
+            <div class="offer position-relative">
+              <img class="w-100" src="../img/popular-services-3.svg" alt="service image">
+              <a href="#">
+                <div class="offer-link position-absolute bottom-0 end-0 translate-middle-y">Хірургічна стоматологія
+                </div>
+              </a>
             </div>
           </div>
           <div class="col-5 d-flex flex-column gap-4">
-            <div class="offer">
-              <img class="w-100" src="../img/popular-services-2.svg"
-                alt="service image">
-              <div class="offer__link">Імплантологія</div>
-            </div>
-            <div class="offer">
-              <img class="w-100" src="../img/popular-services-4.svg"
-                alt="service image">
-              <div class="offer__link">Відбілювання зубів</div>
-            </div>
+            <div class="position-relative">
+              <img class="w-100" src="../img/popular-services-2.svg" alt="service image">
+              <a href="#">
+                <div class="offer-link  position-absolute top-0 end-0 mt-3">Імплантологія</div>
+            </div></a>
+            <div class="position-relative">
+              <img class="w-100" src="../img/popular-services-4.svg" alt="service image">
+              <a href="#">
+                <div class="offer-link  position-absolute top-0 end-0 mt-3 hover">Відбілювання зубів</div>
+            </div></a>
           </div>
         </div>
       </div>
@@ -150,7 +145,6 @@
   </section>
 </main>
 
-<!-- <script src="../js/zoom-map.js"></script> -->
 <script src="../js/clinic-slider.js"></script>
 <script src="../js/google-map.js"></script>
 <script
