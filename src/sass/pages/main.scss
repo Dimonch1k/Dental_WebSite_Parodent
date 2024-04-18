@@ -128,7 +128,7 @@
 
   &__popular-services {
     .main__content {
-      align-items: start;
+      align-items: flex-start;
 
       &__services-offers {
         display: flex;
@@ -224,7 +224,7 @@ h1.styled-text--large {
     font-size: 2rem;
     line-height: 3rem !important;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
 
     span.styled-text--red {
       line-height: unset !important;

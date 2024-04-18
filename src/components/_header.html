@@ -1,88 +1,151 @@
 <header class="header">
-  <div class="header__wrapper">
 
-    <!-- Toggle for sidebar -->
-    <div class="toggle__wrapper">
-      <div class="header__toggle">
-        <div class="header__toggle-line"></div>
-        <div class="header__toggle-line"></div>
-        <div class="header__toggle-line"></div>
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar" style="display: none;">
+    <button class="close-sidebar-btn bg-danger border-0"
+      style="width: 40px; height: 40px; position: absolute; top: 5px; left: 5px;"
+      onclick="closeSidebar()">
+      <div
+        class="close-cross w-100 h-100 d-flex justify-content-center align-items-center">
+        <div class="cross-line bg-white w-50 z-1 position-absolute"
+          style="height: 3px; transform: rotate(45deg);"></div>
+        <div class="cross-line bg-white w-50 z-1 position-absolute"
+          style="height: 3px; transform: rotate(135deg);"></div>
       </div>
-    </div>
+    </button>
 
-    <!-- Header logo -->
-    <div class="logo header__logo">
-      <img src="../img/logo.svg.svg" alt="logo name" class="logo__name">
-      <span class="logo__network-of-dentists">Мережа стоматологій</span>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="header__navigation">
-      <ul>
+    <nav class="sidebar__navigation">
+      <ul class="d-grid gap-5">
         <li><a href="#">Стоматологія в USA та CAN</a></li>
         <li><a href="#">Послуги</a></li>
         <li><a href="#">Лікарі</a></li>
         <li><a href="#">Ціни</a></li>
         <li><a href="#">Про нас</a></li>
-        <li><a href="#">Галерея робіт</a></li>
         <li><a href="#">Контакти</a></li>
       </ul>
-      <button class="styled-btn header__online-registration-btn">
-        Запис онлайн
-        <div class="styled-btn__bottom-line--red"></div>
-      </button>
+
+      <div class="sidebar__navigation__social-links mt-5">
+        <a
+          href="https://www.facebook.com/people/Parodent-Parodent/pfbid0TRZPXFyPceFoS2KeQXL4EprEN4QZqxDKDMZzzwEkDtyNw9y2h8h2HCT9o1JzkyVVl/">
+          <img src="../img/facebook-link.png" alt="facebook icon">
+        </a>
+        <a href="https://www.instagram.com/_parodent_/">
+          <img src="../img/instagram-link.png" alt="instagram icon">
+        </a>
+      </div>
     </nav>
+  </div>
 
-    <!-- Select Parodent place -->
-    <details class="custom-select">
-      <summary class="radios">
-        <input type="radio" name="Address" id="default" title="Виберіть Parodent" checked>
-        <input type="radio" name="Address" id="address1" title="м.Львів, вул.Шевченка, 87А">
-        <input type="radio" name="Address" id="address2" title="м.Львів, вул.Личаківська, 52">
-        <input type="radio" name="Address" id="address3" title="м.Львів, вул.Скорика, 29">
-        <input type="radio" name="Address" id="address4" title="м.Львів, вул.Глибока, 4">
-        <input type="radio" name="Address" id="address5" title="м.Львів, пр-т.Червоної Калини, 85a">
-        <input type="radio" name="Address" id="address6" title="Parodent USА">
-        <input type="radio" name="Address" id="address7" title="Parodent CAN">
-      </summary>
+  <!-- Toggle for sidebar -->
+  <div class="header__burger-wrapper">
+    <div class="burger" onclick="openSidebar()">
+      <div class="burger__line"></div>
+      <div class="burger__line"></div>
+      <div class="burger__line"></div>
+    </div>
+  </div>
 
-      <ul class="select-address-styled header__select-address">
-        <li onclick="choosePPlace(1)">
-          <label for="address1">
-            м.Львів, вул.Шевченка, 87А
-          </label>
-        </li>
+  <!-- Header logo -->
+  <div class="logo header__logo">
+    <img src="../img/logo.svg.svg" alt="logo name" class="logo__name">
+    <span class="logo__network-of-dentists">Мережа стоматологій</span>
+  </div>
 
-        <li>
-          <label for="address2">м.Львів, вул.Личаківська, 52</label>
-        </li>
+  <!-- Navigation -->
+  <nav class="header__navigation">
+    <ul>
+      <li><a href="#">Стоматологія в USA та CAN</a></li>
+      <li><a href="#">Послуги</a></li>
+      <li><a href="#">Лікарі</a></li>
+      <li><a href="#">Ціни</a></li>
+      <li><a href="#">Про нас</a></li>
+      <li><a href="#">Галерея робіт</a></li>
+      <li><a href="#">Контакти</a></li>
+    </ul>
+    <button class="styled-btn header__online-registration-btn">
+      Запис онлайн
+      <div class="styled-btn__bottom-line--red"></div>
+    </button>
+  </nav>
 
-        <li>
-          <label for="address3">м.Львів, вул.Скорика, 29</label>
-        </li>
+  <!-- Select Parodent place -->
+  <details id="select-parodent" class="custom-select">
+    <summary class="radios">
+      <input type="radio" name="Address" id="default" title="Виберіть Parodent"
+        checked>
+      <input type="radio" name="Address" id="address1"
+        title="м.Львів, вул.Шевченка, 87А">
+      <input type="radio" name="Address" id="address2"
+        title="м.Львів, вул.Личаківська, 52">
+      <input type="radio" name="Address" id="address3"
+        title="м.Львів, вул.Скорика, 29">
+      <input type="radio" name="Address" id="address4"
+        title="м.Львів, вул.Глибока, 4">
+      <input type="radio" name="Address" id="address5"
+        title="м.Львів, пр-т.Червоної Калини, 85a">
+      <input type="radio" name="Address" id="address6" title="Parodent USА">
+      <input type="radio" name="Address" id="address7" title="Parodent CAN">
+    </summary>
 
-        <li>
-          <label for="address4">м.Львів, вул.Глибока, 4</label>
-        </li>
+    <ul class="select-address-styled header__select-address">
+      <li onclick="choosePPlace(1)">
+        <label for="address1" onclick="closeSelect()">
+          м.Львів, вул.Шевченка, 87А
+        </label>
+      </li>
 
-        <li>
-          <label for="address5">м.Львів, пр-т.Червоної Калини, 85a
-            <span class="select-address__phone-number">+38 (067) 000 21 87</span>
-            <span class="select-address__phone-number">+38 (044) 334 41 00</span>
-          </label>
-        </li>
+      <li>
+        <label for="address2" onclick="closeSelect()">м.Львів,
+          вул.Личаківська, 52</label>
+      </li>
 
-        <li>
-          <label for="address6">Parodent USА
-            <span class="select-address__phone-number">+1 (623) 398 68 08</span>
-          </label>
-        </li>
+      <li>
+        <label for="address3" onclick="closeSelect()">м.Львів, вул.Скорика,
+          29</label>
+      </li>
 
-        <li>
-          <label for="address7">Parodent CAN
-            <span class="select-address__phone-number">416-201-4440</span>
-          </label>
-        </li>
-      </ul>
-    </details>
+      <li>
+        <label for="address4" onclick="closeSelect()">м.Львів, вул.Глибока,
+          4</label>
+      </li>
+
+      <li>
+        <label for="address5" onclick="closeSelect()">м.Львів, пр-т.Червоної
+          Калини, 85a
+          <span class="select-address__phone-number">+38 (067) 000 21
+            87</span>
+          <span class="select-address__phone-number">+38 (044) 334 41
+            00</span>
+        </label>
+      </li>
+
+      <li>
+        <label for="address6" onclick="closeSelect()">Parodent USА
+          <span class="select-address__phone-number">+1 (623) 398 68 08</span>
+        </label>
+      </li>
+
+      <li onclick="closeSelect()">
+        <label for="address7" onclick="closeSelect()">Parodent CAN
+          <span class="select-address__phone-number">416-201-4440</span>
+        </label>
+      </li>
+    </ul>
+  </details>
 </header>
+
+<!-- For close choose details tag when you choose some Parodent address -->
+<script>
+  function closeSelect() {
+    let selectParodent = document.querySelector("#select-parodent");
+    selectParodent.removeAttribute('open');
+  }
+
+  function openSidebar() {
+    document.querySelector("#sidebar").style.display = "block";
+  }
+  
+  function closeSidebar() {
+    document.querySelector("#sidebar").style.display = "none";
+  }
+</script>
