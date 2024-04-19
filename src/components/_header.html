@@ -1,16 +1,14 @@
 <header class="header">
 
   <!-- Sidebar -->
-  <div id="sidebar" class="sidebar" style="display: none;">
+  <div id="sidebar" class="sidebar">
     <button class="close-sidebar-btn bg-danger border-0"
-      style="width: 40px; height: 40px; position: absolute; top: 5px; left: 5px;"
-      onclick="closeSidebar()">
-      <div
-        class="close-cross w-100 h-100 d-flex justify-content-center align-items-center">
-        <div class="cross-line bg-white w-50 z-1 position-absolute"
-          style="height: 3px; transform: rotate(45deg);"></div>
-        <div class="cross-line bg-white w-50 z-1 position-absolute"
-          style="height: 3px; transform: rotate(135deg);"></div>
+      style="width: 40px; height: 40px; position: absolute; top: 5px; left: 5px;" onclick="closeSidebar()">
+      <div class="close-cross w-100 h-100 d-flex justify-content-center align-items-center">
+        <div class="cross-line bg-white w-50 z-1 position-absolute" style="height: 3px; transform: rotate(45deg);">
+        </div>
+        <div class="cross-line bg-white w-50 z-1 position-absolute" style="height: 3px; transform: rotate(135deg);">
+        </div>
       </div>
     </button>
 
@@ -71,18 +69,12 @@
   <!-- Select Parodent place -->
   <details id="select-parodent" class="custom-select">
     <summary class="radios">
-      <input type="radio" name="Address" id="default" title="Виберіть Parodent"
-        checked>
-      <input type="radio" name="Address" id="address1"
-        title="м.Львів, вул.Шевченка, 87А">
-      <input type="radio" name="Address" id="address2"
-        title="м.Львів, вул.Личаківська, 52">
-      <input type="radio" name="Address" id="address3"
-        title="м.Львів, вул.Скорика, 29">
-      <input type="radio" name="Address" id="address4"
-        title="м.Львів, вул.Глибока, 4">
-      <input type="radio" name="Address" id="address5"
-        title="м.Львів, пр-т.Червоної Калини, 85a">
+      <input type="radio" name="Address" id="default" title="Виберіть Parodent" checked>
+      <input type="radio" name="Address" id="address1" title="м.Львів, вул.Шевченка, 87А">
+      <input type="radio" name="Address" id="address2" title="м.Львів, вул.Личаківська, 52">
+      <input type="radio" name="Address" id="address3" title="м.Львів, вул.Скорика, 29">
+      <input type="radio" name="Address" id="address4" title="м.Львів, вул.Глибока, 4">
+      <input type="radio" name="Address" id="address5" title="м.Львів, пр-т.Червоної Калини, 85a">
       <input type="radio" name="Address" id="address6" title="Parodent USА">
       <input type="radio" name="Address" id="address7" title="Parodent CAN">
     </summary>
@@ -134,18 +126,32 @@
   </details>
 </header>
 
-<!-- For close choose details tag when you choose some Parodent address -->
 <script>
+
+  // variables
+  let selectParodent = document.querySelector("#select-parodent");
+  let sidebar = document.querySelector("#sidebar");
+
+  // Close select tag 
   function closeSelect() {
-    let selectParodent = document.querySelector("#select-parodent");
     selectParodent.removeAttribute('open');
   }
 
+  // Open sidebar
   function openSidebar() {
-    document.querySelector("#sidebar").style.display = "block";
+    sidebar.style.left = "0";
   }
-  
+
+  // Close sidebar when click the cross in sidebar
   function closeSidebar() {
-    document.querySelector("#sidebar").style.display = "none";
+    sidebar.style.left = "-100%";
   }
+
+  // When window scroll the sidebar hide automatically
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 0) {
+      sidebar.style.left = "-100%";
+      selectParodent.removeAttribute('open');
+    }
+  });
 </script>

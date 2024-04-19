@@ -31,12 +31,13 @@ img {
 
   .sidebar {
     position: absolute;
-    left: 0;
+    left: -100%;
     top: 0;
     z-index: 10;
 
     background-color: var(--white);
     padding: 80px;
+    transition: all 1s 0s linear;
 
     &__navigation {
       width: max-content;
