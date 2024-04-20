@@ -22,12 +22,13 @@ img {
 }
 
 .header {
+  display: flex;
   z-index: 100;
-  color: var(--black);
   width: 100%;
   height: max-content;
+
+  color: var(--black);
   text-transform: uppercase;
-  display: flex;
 
   .sidebar {
     position: absolute;
@@ -37,29 +38,35 @@ img {
 
     background-color: var(--white);
     padding: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
     transition: all 1s 0s linear;
+
 
     &__navigation {
       width: max-content;
 
-      ul {
+      .nav-list {
         display: flex;
+        flex-direction: column;
         align-items: center;
         gap: 50px;
 
-        > li {
+        &__item {
           display: flex;
           align-items: center;
+        }
 
-          a {
-            color: var(--black);
-            font-size: 12px;
+        &__link {
+          transition: color 0.4s ease-in-out;
+          color: var(--black);
+
+          &:hover {
+            color: var(--primary-color);
             transition: color 0.4s ease-in-out;
-
-            &:hover {
-              color: var(--primary-color);
-              transition: color 0.4s ease-in-out;
-            }
           }
         }
       }
@@ -86,38 +93,41 @@ img {
     }
   }
 
-  &__burger-wrapper {
+  .sidebar.active {
+    width: 0;
+  }
+
+
+  .burger {
     padding: 33px 31px;
 
-    .burger {
-      position: relative;
-      display: grid;
-      gap: 7px;
-      justify-items: end;
-      cursor: pointer;
+    position: relative;
+    display: grid;
+    gap: 7px;
+    justify-items: end;
+    cursor: pointer;
 
-      &:hover {
-        .burger__line {
-          width: 25px !important;
-          transition: all 0.2s ease-in-out;
-        }
-      }
-
-      &__line {
-        color: #000;
-        border: 1.5px solid #000;
-        border-radius: 10px;
-        width: 25px;
+    &:hover {
+      .burger__line {
+        width: 25px !important;
         transition: all 0.2s ease-in-out;
       }
+    }
 
-      &__line:nth-child(2) {
-        width: 90%;
-      }
+    &__line {
+      color: #000;
+      border: 1.5px solid #000;
+      border-radius: 10px;
+      width: 25px;
+      transition: all 0.2s ease-in-out;
+    }
 
-      &__line:nth-child(3) {
-        width: 80%;
-      }
+    &__line:nth-child(2) {
+      width: 90%;
+    }
+
+    &__line:nth-child(3) {
+      width: 80%;
     }
   }
 
@@ -152,7 +162,7 @@ img {
       align-items: center;
       gap: 50px;
 
-      > li {
+      >li {
         display: flex;
         align-items: center;
 
@@ -191,7 +201,7 @@ img {
     &[open] {
       z-index: 1;
 
-      > summary.radios {
+      >summary.radios {
         border-bottom: 1px solid #c5c5c5 solid var(--black);
 
         &::before {
@@ -211,7 +221,7 @@ img {
       }
     }
 
-    > summary.radios {
+    >summary.radios {
       padding: 0 10px 0 30px;
       display: flex;
       justify-content: space-between;
@@ -247,7 +257,7 @@ img {
       }
     }
 
-    > ul.header__select-address {
+    >ul.header__select-address {
       width: 100%;
       background: var(--white);
       position: absolute;
@@ -257,7 +267,7 @@ img {
       box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.05);
       overflow-y: auto;
 
-      > li {
+      >li {
         margin: 0;
         border-bottom: 1px solid var(--black);
         counter-reset: labels;
@@ -374,7 +384,7 @@ img {
 
 @media screen and (max-width: 1560px) {
   .header {
-    &__burger-wrapper {
+    .burger {
       padding: 28px 26px;
     }
 
@@ -389,10 +399,10 @@ img {
     }
 
     &__navigation {
-      > ul {
+      >ul {
         gap: 40px !important;
 
-        > li a {
+        >li a {
           font-size: 11px !important;
         }
       }
@@ -405,14 +415,14 @@ img {
     .custom-select {
       width: 220px !important;
 
-      > summary.radios input::after {
+      >summary.radios input::after {
         font-size: 10px !important;
       }
 
-      > ul.header__select-address li label {
+      >ul.header__select-address li label {
         font-size: 10px !important;
 
-        > span.select-address__phone-number {
+        >span.select-address__phone-number {
           font-size: 14px !important;
         }
       }
@@ -422,7 +432,7 @@ img {
 
 @media screen and (max-width: 1400px) {
   .header {
-    &__burger-wrapper {
+    .burger {
       padding: 22px 20px;
     }
 
@@ -438,10 +448,10 @@ img {
     }
 
     &__navigation {
-      > ul {
+      >ul {
         gap: 35px !important;
 
-        > li a {
+        >li a {
           font-size: 9px !important;
         }
       }
@@ -454,14 +464,14 @@ img {
     .custom-select {
       width: 200px !important;
 
-      > summary.radios input::after {
+      >summary.radios input::after {
         font-size: 9px !important;
       }
 
-      > ul.header__select-address li label {
+      >ul.header__select-address li label {
         font-size: 9px !important;
 
-        > span.select-address__phone-number {
+        >span.select-address__phone-number {
           font-size: 12px !important;
         }
       }
@@ -471,30 +481,27 @@ img {
 
 @media screen and (max-width: 1200px) {
   .header {
-    &__burger-wrapper {
+    .burger {
       padding: 18px 16px;
+      gap: 4px;
 
-      .burger {
-        gap: 4px;
-
-        &:hover {
-          .burger__line {
-            width: 17px !important;
-          }
+      &:hover {
+        .burger__line {
+          width: 17px !important;
         }
+      }
 
-        &__line {
-          width: 17px;
-          border: 1.2px solid black;
-        }
+      &__line {
+        width: 17px;
+        border: 1.2px solid black;
+      }
 
-        &__line:nth-child(2) {
-          width: 90%;
-        }
+      &__line:nth-child(2) {
+        width: 90%;
+      }
 
-        &__line:nth-child(3) {
-          width: 80%;
-        }
+      &__line:nth-child(3) {
+        width: 80%;
       }
     }
 
@@ -510,10 +517,10 @@ img {
     }
 
     &__navigation {
-      > ul {
+      >ul {
         gap: 25px !important;
 
-        > li a {
+        >li a {
           font-size: 7px !important;
         }
       }
@@ -526,7 +533,7 @@ img {
     .custom-select {
       width: 160px !important;
 
-      > summary.radios {
+      >summary.radios {
         padding: 10px 0 10px 20px;
 
         input::after {
@@ -534,7 +541,7 @@ img {
         }
       }
 
-      > ul.header__select-address li {
+      >ul.header__select-address li {
         min-height: 40px !important;
 
         label {
@@ -542,7 +549,7 @@ img {
           padding-right: 20px;
           padding-left: 20px;
 
-          > span.select-address__phone-number {
+          >span.select-address__phone-number {
             font-size: 11px !important;
           }
         }

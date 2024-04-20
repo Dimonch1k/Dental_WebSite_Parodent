@@ -1,3 +1,5 @@
+@import '../base/mixins';
+
 .footer {
   width: 100vw;
 
@@ -45,54 +47,41 @@
     }
   }
 
-  &__bottom-content {
+  .bottom-content {
     padding: 45px 0;
+    display: flex;
+    align-items: center;
 
     font-weight: 400;
     line-height: 28px;
 
-    :is(.footer__author-rule, .footer__social-links, .footer__creator-text) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
 
-    >div.footer__author-rule {
+    &__author-rule {
+      text-align: center;
       font-size: 12px;
       letter-spacing: 0.6px;
     }
 
-    >div.footer__social-links {
+    &__social-links {
       display: flex;
+      justify-content: center;
       gap: 10px;
+    }
 
-      >div {
-        width: 30px;
-        height: 30px;
+    &__social-link {
+      @include social-links-a;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      img {
+        @include social-links-img;
 
-        background: #383838;
-        border: 1px solid var(--black);
-        border-radius: 50%;
-
-        img {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          transition: box-shadow 0.3s ease-in-out;
-
-          &:hover {
-            box-shadow: 0px 0px 20px rgb(31, 72, 255);
-            transition: box-shadow 0.5s ease-in-out;
-          }
+        &:hover {
+          @include social-links-hover;
         }
       }
     }
 
-    >div.footer__creator-text {
+    &__creator-text {
+      text-align: center;
       font-size: 14px;
       color: rgba(82, 74, 74, 0.7);
     }
@@ -116,53 +105,53 @@
   }
 }
 
-@media screen and (max-width: 1560px) {
-  footer.footer {
-    >div.footer__main-content {
-      >div.footer__text {
-        margin-right: 8%;
-      }
+// @media screen and (max-width: 1560px) {
+//   .footer {
+//     &__main-content {
+//       footer__text {
+//         margin-right: 8%;
+//       }
 
-      >div.footer__links {
-        display: flex;
-        width: 100%;
-        gap: 20%;
+//       >div.footer__links {
+//         display: flex;
+//         width: 100%;
+//         gap: 20%;
 
-        >div.services {
-          display: flex;
-          width: 66%;
+//         >div.services {
+//           display: flex;
+//           width: 66%;
 
-          ul.services__links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            column-gap: 20% !important;
-          }
-        }
+//           ul.services__links {
+//             display: grid;
+//             grid-template-columns: repeat(2, 1fr);
+//             column-gap: 20% !important;
+//           }
+//         }
 
-        > :is(div.general, div.services) {
-          display: flex;
-          flex-direction: column;
-          gap: 25px;
+//         > :is(div.general, div.services) {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 25px;
 
-          >div.links-title {
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-          }
+//           >div.links-title {
+//             font-size: 13px;
+//             font-weight: 700;
+//             text-transform: uppercase;
+//           }
 
-          > :is(ul.general__links, ul.services__links) {
-            >li {
-              a {
-                font-size: 13px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+//           > :is(ul.general__links, ul.services__links) {
+//             >li {
+//               a {
+//                 font-size: 13px;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-@media screen and (max-width: 1400px) {}
+// @media screen and (max-width: 1400px) {}
 
-@media screen and (max-width: 1200px) {}
+// @media screen and (max-width: 1200px) {}

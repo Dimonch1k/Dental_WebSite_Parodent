@@ -2,24 +2,21 @@
 
   <!-- Sidebar -->
   <div id="sidebar" class="sidebar">
-    <button class="close-sidebar-btn bg-danger border-0"
-      style="width: 40px; height: 40px; position: absolute; top: 5px; left: 5px;" onclick="closeSidebar()">
-      <div class="close-cross w-100 h-100 d-flex justify-content-center align-items-center">
-        <div class="cross-line bg-white w-50 z-1 position-absolute" style="height: 3px; transform: rotate(45deg);">
-        </div>
-        <div class="cross-line bg-white w-50 z-1 position-absolute" style="height: 3px; transform: rotate(135deg);">
-        </div>
+    <!-- <button class="sidebar__close bg-danger border-0" onclick="closeSidebar()">
+      <div class="close-cross">
+        <div class="close-cross__line"></div>
+        <div class="close-cross__line"></div>
       </div>
-    </button>
+    </button> -->
 
     <nav class="sidebar__navigation">
-      <ul class="d-grid gap-5">
-        <li><a href="#">Стоматологія в USA та CAN</a></li>
-        <li><a href="#">Послуги</a></li>
-        <li><a href="#">Лікарі</a></li>
-        <li><a href="#">Ціни</a></li>
-        <li><a href="#">Про нас</a></li>
-        <li><a href="#">Контакти</a></li>
+      <ul class="nav-list">
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Стоматологія в USA та CAN</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Послуги</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Лікарі</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Ціни</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Про нас</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Контакти</a></li>
       </ul>
 
       <div class="sidebar__navigation__social-links mt-5">
@@ -35,12 +32,10 @@
   </div>
 
   <!-- Toggle for sidebar -->
-  <div class="header__burger-wrapper">
-    <div class="burger" onclick="openSidebar()">
-      <div class="burger__line"></div>
-      <div class="burger__line"></div>
-      <div class="burger__line"></div>
-    </div>
+  <div class="burger" onclick="openSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 
   <!-- Header logo -->
