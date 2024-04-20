@@ -34,7 +34,7 @@ img {
     position: absolute;
     left: -100%;
     top: 0;
-    z-index: 10;
+    z-index: 3;
 
     background-color: var(--white);
     padding: 80px;
@@ -42,9 +42,7 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 3rem;
     transition: all 1s 0s linear;
-
 
     &__navigation {
       width: max-content;
@@ -61,6 +59,7 @@ img {
         }
 
         &__link {
+          font-size: 1rem;
           transition: color 0.4s ease-in-out;
           color: var(--black);
 
@@ -94,43 +93,79 @@ img {
   }
 
   .sidebar.active {
-    width: 0;
+    left: 0;
   }
 
+  .burger-wrapper {
+    padding: 1rem;
+    display: flex;
 
-  .burger {
-    padding: 33px 31px;
+    .burger {
+      width: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
 
-    position: relative;
-    display: grid;
-    gap: 7px;
-    justify-items: end;
-    cursor: pointer;
+      position: relative;
+      cursor: pointer;
 
-    &:hover {
-      .burger__line {
-        width: 25px !important;
+      &:hover {
+        span {
+          width: 100% !important;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+
+      span {
+        height: 3px;
+        width: 100%;
+        background-color: var(--black);
+        border-radius: 25px;
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         transition: all 0.2s ease-in-out;
+
+        &:nth-child(1) {
+          top: 25%;
+        }
+
+        &:nth-child(2) {
+          width: 90%;
+        }
+
+        &:nth-child(3) {
+          top: 75%;
+          width: 80%;
+        }
       }
     }
 
-    &__line {
-      color: #000;
-      border: 1.5px solid #000;
-      border-radius: 10px;
-      width: 25px;
-      transition: all 0.2s ease-in-out;
-    }
+    .burger.active
+    { 
+      z-index: 5;
 
-    &__line:nth-child(2) {
-      width: 90%;
-    }
+      span {
+      width: 100%;
 
-    &__line:nth-child(3) {
-      width: 80%;
+      &:nth-child(1) {
+        top: 50%;
+        transform: translate(-50%, 0) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: 50%;
+        transform: translate(-50%, 0) rotate(-45deg);
+      }
     }
   }
-
+  }
   &__logo {
     display: flex;
     flex-direction: column;
@@ -162,7 +197,7 @@ img {
       align-items: center;
       gap: 50px;
 
-      >li {
+      > li {
         display: flex;
         align-items: center;
 
@@ -201,7 +236,7 @@ img {
     &[open] {
       z-index: 1;
 
-      >summary.radios {
+      > summary.radios {
         border-bottom: 1px solid #c5c5c5 solid var(--black);
 
         &::before {
@@ -221,7 +256,7 @@ img {
       }
     }
 
-    >summary.radios {
+    > summary.radios {
       padding: 0 10px 0 30px;
       display: flex;
       justify-content: space-between;
@@ -257,7 +292,7 @@ img {
       }
     }
 
-    >ul.header__select-address {
+    > ul.header__select-address {
       width: 100%;
       background: var(--white);
       position: absolute;
@@ -267,16 +302,14 @@ img {
       box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.05);
       overflow-y: auto;
 
-      >li {
+      > li {
         margin: 0;
         border-bottom: 1px solid var(--black);
         counter-reset: labels;
         min-height: 50px;
 
         background: linear-gradient(#1095c1 0 0) left / var(--p, 0) no-repeat;
-        transition:
-          0.4s,
-          background-position 0s;
+        transition: 0.4s, background-position 0s;
 
         display: grid;
         align-items: center;
@@ -352,11 +385,9 @@ img {
   padding: 15px 20px;
 
   --c: no-repeat linear-gradient(#1095c1 0 0);
-  background:
-    var(--c) calc(-101% + var(--p, 0%)) 100% / 50.1% var(--p, 0.08em),
+  background: var(--c) calc(-101% + var(--p, 0%)) 100% / 50.1% var(--p, 0.08em),
     var(--c) calc(201% - var(--p, 0%)) 0 / 50.1% var(--p, 0.08em);
-  transition:
-    0.3s var(--t, 0s),
+  transition: 0.3s var(--t, 0s),
     background-position 0.3s calc(0.3s - var(--t, 0s));
 
   &:hover {
@@ -399,10 +430,10 @@ img {
     }
 
     &__navigation {
-      >ul {
+      > ul {
         gap: 40px !important;
 
-        >li a {
+        > li a {
           font-size: 11px !important;
         }
       }
@@ -415,14 +446,14 @@ img {
     .custom-select {
       width: 220px !important;
 
-      >summary.radios input::after {
+      > summary.radios input::after {
         font-size: 10px !important;
       }
 
-      >ul.header__select-address li label {
+      > ul.header__select-address li label {
         font-size: 10px !important;
 
-        >span.select-address__phone-number {
+        > span.select-address__phone-number {
           font-size: 14px !important;
         }
       }
@@ -448,10 +479,10 @@ img {
     }
 
     &__navigation {
-      >ul {
+      > ul {
         gap: 35px !important;
 
-        >li a {
+        > li a {
           font-size: 9px !important;
         }
       }
@@ -464,14 +495,14 @@ img {
     .custom-select {
       width: 200px !important;
 
-      >summary.radios input::after {
+      > summary.radios input::after {
         font-size: 9px !important;
       }
 
-      >ul.header__select-address li label {
+      > ul.header__select-address li label {
         font-size: 9px !important;
 
-        >span.select-address__phone-number {
+        > span.select-address__phone-number {
           font-size: 12px !important;
         }
       }
@@ -517,10 +548,10 @@ img {
     }
 
     &__navigation {
-      >ul {
+      > ul {
         gap: 25px !important;
 
-        >li a {
+        > li a {
           font-size: 7px !important;
         }
       }
@@ -533,7 +564,7 @@ img {
     .custom-select {
       width: 160px !important;
 
-      >summary.radios {
+      > summary.radios {
         padding: 10px 0 10px 20px;
 
         input::after {
@@ -541,7 +572,7 @@ img {
         }
       }
 
-      >ul.header__select-address li {
+      > ul.header__select-address li {
         min-height: 40px !important;
 
         label {
@@ -549,7 +580,7 @@ img {
           padding-right: 20px;
           padding-left: 20px;
 
-          >span.select-address__phone-number {
+          > span.select-address__phone-number {
             font-size: 11px !important;
           }
         }
