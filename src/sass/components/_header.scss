@@ -96,6 +96,7 @@ img {
     left: 0;
   }
 
+
   .burger-wrapper {
     padding: 1rem;
     display: flex;
@@ -143,41 +144,57 @@ img {
       }
     }
 
-    .burger.active
-    { 
+    .burger.active {
       z-index: 5;
+      background: var(--primary-color);
+      transition: 1s linear.4s;
 
       span {
-      width: 100%;
+        background: var(--white);
+        transition-delay: .4s;
 
-      &:nth-child(1) {
-        top: 50%;
-        transform: translate(-50%, 0) rotate(45deg);
+
+        &:nth-child(1) {
+          width: 50%;
+          top: 50%;
+          transform: translate(-50%, 0) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          width: 50%;
+          top: 50%;
+          transform: translate(-50%, 0) rotate(-45deg);
+        }
       }
 
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        top: 50%;
-        transform: translate(-50%, 0) rotate(-45deg);
+      &:hover {
+        span {
+          width: 70% !important;
+        }
       }
     }
   }
-  }
-  &__logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 9px;
 
-    padding: 0 20px;
-    border-left: 1px solid #c5c5c5;
-    border-right: 1px solid #c5c5c5;
+  .logo {
 
-    .logo__network-of-dentists {
+    a {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+
+      padding: 0 20px;
+      border-left: 1px solid #c5c5c5;
+      border-right: 1px solid #c5c5c5;
+    }
+
+    &__network-of-dentists {
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 2px;
@@ -192,24 +209,24 @@ img {
     align-items: center;
     gap: 20px;
 
-    ul {
+    .header-list {
       display: flex;
       align-items: center;
       gap: 50px;
 
-      > li {
+      .header-list__item {
         display: flex;
         align-items: center;
+      }
 
-        a {
-          color: var(--black);
-          font-size: 12px;
+      .header-list__link {
+        color: var(--black);
+        font-size: 12px;
+        transition: color 0.4s ease-in-out;
+
+        &:hover {
+          color: var(--primary-color);
           transition: color 0.4s ease-in-out;
-
-          &:hover {
-            color: var(--primary-color);
-            transition: color 0.4s ease-in-out;
-          }
         }
       }
     }
@@ -236,7 +253,7 @@ img {
     &[open] {
       z-index: 1;
 
-      > summary.radios {
+      >summary.radios {
         border-bottom: 1px solid #c5c5c5 solid var(--black);
 
         &::before {
@@ -256,7 +273,7 @@ img {
       }
     }
 
-    > summary.radios {
+    >summary.radios {
       padding: 0 10px 0 30px;
       display: flex;
       justify-content: space-between;
@@ -292,7 +309,7 @@ img {
       }
     }
 
-    > ul.header__select-address {
+    >ul.header__select-address {
       width: 100%;
       background: var(--white);
       position: absolute;
@@ -302,7 +319,7 @@ img {
       box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.05);
       overflow-y: auto;
 
-      > li {
+      >li {
         margin: 0;
         border-bottom: 1px solid var(--black);
         counter-reset: labels;
@@ -413,55 +430,74 @@ img {
   }
 }
 
-@media screen and (max-width: 1560px) {
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {
   .header {
     .burger {
-      padding: 28px 26px;
+      padding: 18px 16px;
     }
 
     .logo {
       &__name {
-        width: 140px !important;
+        width: 95px !important;
       }
 
       &__network-of-dentists {
-        font-size: 11px !important;
+        font-size: 8px !important;
+        letter-spacing: 0.45px !important;
       }
     }
 
     &__navigation {
-      > ul {
-        gap: 40px !important;
+      display: flex;
+      align-items: center;
+      margin-right: auto;
 
-        > li a {
-          font-size: 11px !important;
+      .header-list {
+        display: flex;
+        gap: 25px !important;
+
+        .header-list__link {
+          font-size: 7px !important;
         }
       }
 
-      button.header__online-registration-btn {
-        font-size: 12px !important;
+      .header__online-registration-btn {
+        font-size: 10px !important;
       }
     }
 
     .custom-select {
-      width: 220px !important;
+      width: 160px !important;
 
-      > summary.radios input::after {
-        font-size: 10px !important;
+      >summary.radios {
+        padding: 10px 0 10px 20px;
+
+        input::after {
+          font-size: 9px !important;
+        }
       }
 
-      > ul.header__select-address li label {
-        font-size: 10px !important;
+      >ul.header__select-address li {
+        min-height: 40px !important;
 
-        > span.select-address__phone-number {
-          font-size: 14px !important;
+        label {
+          font-size: 9px !important;
+          padding-right: 20px;
+          padding-left: 20px;
+
+          >span.select-address__phone-number {
+            font-size: 11px !important;
+          }
         }
       }
     }
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 1200px) {
   .header {
     .burger {
       padding: 22px 20px;
@@ -479,15 +515,15 @@ img {
     }
 
     &__navigation {
-      > ul {
+      .header-list {
         gap: 35px !important;
 
-        > li a {
+        .header-list__link {
           font-size: 9px !important;
         }
       }
 
-      button.header__online-registration-btn {
+      .header__online-registration-btn {
         font-size: 10px !important;
       }
     }
@@ -495,14 +531,14 @@ img {
     .custom-select {
       width: 200px !important;
 
-      > summary.radios input::after {
+      >summary.radios input::after {
         font-size: 9px !important;
       }
 
-      > ul.header__select-address li label {
+      >ul.header__select-address li label {
         font-size: 9px !important;
 
-        > span.select-address__phone-number {
+        >span.select-address__phone-number {
           font-size: 12px !important;
         }
       }
@@ -510,30 +546,65 @@ img {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .header {
     .burger {
-      padding: 18px 16px;
-      gap: 4px;
+      padding: 28px 26px;
+    }
 
-      &:hover {
-        .burger__line {
-          width: 17px !important;
+    .logo {
+      &__name {
+        width: 140px !important;
+      }
+
+      &__network-of-dentists {
+        font-size: 11px !important;
+      }
+    }
+
+    &__navigation {
+      .header-list {
+        gap: 40px !important;
+
+        .header-list__link {
+          font-size: 11px !important;
         }
       }
 
-      &__line {
-        width: 17px;
-        border: 1.2px solid black;
+      .header__online-registration-btn {
+        font-size: 12px !important;
+      }
+    }
+
+    .custom-select {
+      width: 220px !important;
+
+      >summary.radios input::after {
+        font-size: 10px !important;
       }
 
-      &__line:nth-child(2) {
-        width: 90%;
-      }
+      >ul.header__select-address li label {
+        font-size: 10px !important;
 
-      &__line:nth-child(3) {
-        width: 80%;
+        >span.select-address__phone-number {
+          font-size: 14px !important;
+        }
       }
+    }
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .header {
+    .sidebar {
+      width: 100%;
+      transition: .4s linear;
+    }
+
+    .burger {
+      padding: 18px 16px !important;
+      gap: 4px;
     }
 
     .logo {
@@ -548,23 +619,34 @@ img {
     }
 
     &__navigation {
-      > ul {
-        gap: 25px !important;
+      margin-right: 10px;
 
-        > li a {
-          font-size: 7px !important;
-        }
+      .header-list {
+        display: none;
       }
 
-      button.header__online-registration-btn {
+      .header__online-registration-btn {
         font-size: 10px !important;
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .burger-wrapper {
+    padding: 14px 12px !important;
+    gap: 4px;
+  }
+
+  .header {
+    &__online-registration-btn {
+      padding: 8px 12px !important;
+    }
 
     .custom-select {
-      width: 160px !important;
+      width: 140px !important;
 
-      > summary.radios {
+      >summary.radios {
         padding: 10px 0 10px 20px;
 
         input::after {
@@ -572,7 +654,7 @@ img {
         }
       }
 
-      > ul.header__select-address li {
+      >ul.header__select-address li {
         min-height: 40px !important;
 
         label {
@@ -580,7 +662,7 @@ img {
           padding-right: 20px;
           padding-left: 20px;
 
-          > span.select-address__phone-number {
+          >span.select-address__phone-number {
             font-size: 11px !important;
           }
         }

@@ -88,6 +88,7 @@
     </div>
   </section>
 
+  <!-- Popular services -->
   <section class="main__popular-services container">
     <div class="main__content row row-cols-lg-2 row-cols-1 gap-lg-0 gap-4">
 
@@ -109,7 +110,7 @@
       <!-- Popular services offers -->
       <div class="main__content__services-offers offers col-lg-7 offset-lg-1 gap">
         <div class="row row-cols-sm-2 row-cols-auto justify-content-center">
-          <div class="rowcolsxs col-sm-5 d-flex flex-column gap-4 mt-sm-5">
+          <div class="offers-wrapper col-sm-5 d-flex flex-column gap-4 mt-sm-5">
             <div class="offer position-relative">
               <img class="w-100" src="../img/popular-services-1.svg" alt="service image">
               <a href="#">
@@ -126,14 +127,15 @@
               </a>
             </div>
           </div>
-          <!-- <div class="w-100"></div> -->
-          <div class="col-sm-5 col-12 d-flex flex-column gap-4">
-            <div class="position-relative">
+
+
+          <div class="offers-wrapper col-sm-5 col-12 d-flex flex-column gap-4">
+            <div class="offer position-relative">
               <img class="w-100" src="../img/popular-services-2.svg" alt="service image">
               <a href="#">
                 <div class="offer-link  position-absolute top-0 end-0 mt-3">Імплантологія</div>
             </div></a>
-            <div class="position-relative">
+            <div class="offer position-relative">
               <img class="w-100" src="../img/popular-services-4.svg" alt="service image">
               <a href="#">
                 <div class="offer-link  position-absolute top-0 end-0 mt-3 hover">Відбілювання зубів</div>
@@ -144,9 +146,102 @@
 
     </div>
   </section>
+
+  <!-- About us Section -->
+  <section class="main__about-us container">
+    <div class="main__content flex-column-reverse flex-lg-row gap-3 gap-lg-0 ">
+
+      <div class="col-xl-6 col-lg-5 col-md-8">
+        <img src="../img/about-us.svg" alt="about us image" class="w-100">
+      </div>
+
+      <div class="main__content__info col-xl-4 col-lg-5 offset-lg-1" style="gap: 30px;">
+        <h1 class="styled-text--large m-0" style="flex-direction: row; gap: 1rem;">Про <span
+            class="styled-text--red">Нас</span>
+        </h1>
+        <p class="main__content__description">
+          Хочемо Вас здивувати:­ лікування зубів в мережі стоматологій
+          «Пародент» приблизно в 10 разів дешевше, ніж в клініках –
+          партнерах Канади або США. Зокрема, вартість 1 імпланта (від
+          встановлення до протезування металокерамікою) становить
+          ~500 $, тоді як в Канаді і США ця процедура вартує ~5000$.
+          Подібна різниця у вартості стосується­ й інших стоматолог­ічних
+          втручань. Ваші близькі та друзі зможуть поєднати свій
+          відпочинок­ або важливі справи в Україні з якісним лікуванням
+          зубів у Львові, заощадивши­ при цьому значні кошти.
+        </p>
+
+        <button class="styled-btn contact-us">
+          Дізнатись більше
+          <div class="styled-btn__bottom-line--red"></div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Give Question Section -->
+  <section class="main__give-question container">
+    <div
+      class="main__content justify-content-center justify-content-lg-start flex-lg-row flex-column-reverse gap-4 gap-lg-0 ">
+
+      <div class="col-md-5 col-lg-6 col-md-8">
+        <img src="../img/give-question.svg" alt="give question image" class="w-100">
+      </div>
+
+      <div class="main__content__info col-xl-4 col-lg-5 offset-lg-1">
+        <h1 class="styled-text--large">Маєте Запитання? <span class="styled-text--red">Напишіть нам</span>
+        </h1>
+
+        <form class="give-question-form">
+          <label>
+            Ім'я
+            <input class="question-name" type="text">
+          </label>
+
+          <label>
+            Телефон
+            <input class="question-phone" type="tel">
+          </label>
+          <textarea id="question-message" class="question-message" style="height: 80px;"></textarea>
+        </form>
+
+        <button class="styled-btn send-question-btn">
+          Надіслати
+          <div class="styled-btn__bottom-line--red"></div>
+        </button>
+
+        <div class="popup" id="popup">
+          <div class="popup__content">
+            <span class="popup__close" id="close-question">&times;</span>
+            <h2>Ваше запитання надіслано</h2>
+            <p>Наш менеджер зв'яжеться з Вами</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <script src="../js/clinic-slider.js"></script>
 <script src="../js/google-map.js"></script>
 <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs4whEtOsDLUbn-Stqx0qvQzpT_QoekNo&callback=myMap"></script>
+
+
+
+<!-- Popup -->
+<script>
+  document.querySelector(".send-question-btn").addEventListener("click", function () {
+
+
+    document.querySelector("#popup").style.display = "block";
+
+    document.querySelector(".question-name").value = "";
+    document.querySelector(".question-phone").value = "";
+    document.querySelector("#question-message").value = "";
+  });
+
+  document.querySelector("#close-question").addEventListener("click", function () {
+    document.querySelector("#popup").style.display = "none";
+  });
+</script>

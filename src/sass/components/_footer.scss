@@ -2,6 +2,7 @@
 
 .footer {
   width: 100vw;
+  margin-top: 150px;
 
   .footer__links {
     display: flex;
@@ -104,6 +105,33 @@
     }
   }
 }
+
+
+@media screen and (max-width: 992px) {
+  .footer {
+    >div {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    >div {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+  }
+}
+
+
 
 // @media screen and (max-width: 1560px) {
 //   .footer {
